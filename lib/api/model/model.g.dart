@@ -163,10 +163,10 @@ User _$UserFromJson(Map<String, dynamic> json) => User(
   dateJoined: json['date_joined'] as String,
   isActive: json['is_active'] as bool,
   isBot: json['is_bot'] as bool,
-  botType: $enumDecode(
+  botType: $enumDecodeNullable(
     _$UserBotTypeEnumMap,
     json['bot_type'],
-    unknownValue: UserBotType.isNotBot,
+    unknownValue: UserBotType.unknown,
   ),
   botOwnerId: (json['bot_owner_id'] as num?)?.toInt(),
   role: $enumDecode(
@@ -213,7 +213,7 @@ const _$UserBotTypeEnumMap = {
   UserBotType.webhookIncoming: 2,
   UserBotType.webhookOutgoing: 3,
   UserBotType.embedded: 4,
-  UserBotType.isNotBot: null,
+  UserBotType.unknown: null,
 };
 
 const _$UserRoleEnumMap = {

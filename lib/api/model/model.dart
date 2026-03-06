@@ -491,8 +491,8 @@ class User {
   // bool isAdmin; // obsoleted by [role]; ignore
   // bool isGuest; // obsoleted by [role]; ignore
   final bool isBot;
-  @JsonKey(unknownEnumValue: UserBotType.isNotBot)
-  final UserBotType botType;
+  @JsonKey(unknownEnumValue: UserBotType.unknown)
+  final UserBotType? botType;
   int? botOwnerId;
   @JsonKey(unknownEnumValue: UserRole.unknown)
   UserRole role;
@@ -595,7 +595,7 @@ enum UserBotType {
   webhookIncoming(apiValue: 2),
   webhookOutgoing(apiValue: 3),
   embedded(apiValue: 4),
-  isNotBot(apiValue: null);
+  unknown(apiValue: null);
 
   const UserBotType({
     required this.apiValue,

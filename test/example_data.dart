@@ -297,7 +297,7 @@ User user({
     dateJoined: dateJoined ?? '2024-02-24T11:18+00:00',
     isActive: isActive ?? true,
     isBot: isBot ?? false,
-    botType: UserBotType.isNotBot,
+    botType: UserBotType.unknown,
     botOwnerId: botOwnerId,
     role: role ?? UserRole.member,
     timezone: 'UTC',
